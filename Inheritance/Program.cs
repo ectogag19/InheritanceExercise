@@ -25,15 +25,40 @@ namespace Inheritance
 
             /*Create an object of your Bird class
              *  give values to your members using the object of your Bird class
-             *  
-             * Creatively display the class member values 
+             *
+             * Creatively display the class member values
              */
+
+            var myBird = new Bird();
+            myBird.BeakShape = "pointy";
+            myBird.Wingspan = 2.3;
+            myBird.FeatherColor = "red";
+            myBird.CanFly = true;
 
             /*Create an object of your Reptile class
              *  give values to your members using the object of your Reptile class
-             *  
-             * Creatively display the class member values 
+             *
+             * Creatively display the class member values
              */
+
+            var myReptile = new Reptile()
+            {
+                CanSwim = true,
+                ScaleColor = "green",
+                Habitat = "jungle",
+                CanGrowTail = true
+            };
+
+            var myAnimals = new Animal[] {myBird, myReptile};
+
+            foreach (var animal in myAnimals)
+            {
+                Console.WriteLine($"Alive: {animal.IsAlive}");
+                Console.WriteLine($"Age: {animal.Age} years old");
+                Console.WriteLine($"It has {animal.LegCount} legs");
+                Console.WriteLine($"It lives by {animal.LandSeaAir}");
+                Console.WriteLine($"");
+            }
         }
     }
 }
